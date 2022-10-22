@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "37895b25-a866-4726-89be-ec31fdf68c2c",
+		"name": "ZIp API examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "598323"
+	},
+	"item": [
+		{
+			"name": "GET data for US zip code 90210",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check country in response\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData['country']).to.eql('United States');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check name for first place in response\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData['places'][0]['place name']).to.eql('Beverly Hills');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.zippopotam.us/us/90210",
+					"protocol": "http",
+					"host": [
+						"api",
+						"zippopotam",
+						"us"
+					],
+					"path": [
+						"us",
+						"90210"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
