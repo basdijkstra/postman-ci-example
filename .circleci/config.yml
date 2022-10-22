@@ -12,4 +12,7 @@ jobs:
       - checkout
       - newman/newman-run:
           collection: ./zip_api_examples.json
-workflows: null
+workflows:
+  postman-ci-demo:
+    jobs:
+      - newman/newman-collection-run
