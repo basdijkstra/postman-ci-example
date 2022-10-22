@@ -15,4 +15,4 @@ jobs:
 workflows:
   postman-ci-demo:
     jobs:
-      - newman/newman-collection-run
+      - newman-collection-run
