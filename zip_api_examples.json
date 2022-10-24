@@ -19,7 +19,7 @@
 							"\r",
 							"pm.test(\"Check country in response\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData['country']).to.eql('United States');\r",
+							"    pm.expect(jsonData['country']).to.eql('Canada');\r",
 							"});\r",
 							"\r",
 							"pm.test(\"Check name for first place in response\", function () {\r",
